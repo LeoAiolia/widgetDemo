@@ -76,6 +76,7 @@ struct StartTimerIntent: SetValueIntent {
 
     func perform() async throws -> some IntentResult {
         // Start the timer…
+        print("perform tap action, name: \(name), value: \(value)")
         return .result()
     }
 }

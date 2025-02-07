@@ -63,6 +63,7 @@ struct SmallWidget: Widget {
             SmallWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
+        .supportedFamilies([.systemSmall])
     }
 }
 
