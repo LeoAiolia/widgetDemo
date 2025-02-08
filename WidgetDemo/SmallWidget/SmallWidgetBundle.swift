@@ -11,7 +11,7 @@ import SwiftUI
 @main
 struct SmallWidgetBundle: WidgetBundle {
     var body: some Widget {
-        SmallWidget()
+        DynamicIntentWidget()
         
         if #available(iOS 18.0, *) {
             SmallWidgetControl()

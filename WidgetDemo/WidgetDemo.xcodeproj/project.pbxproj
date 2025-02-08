@@ -54,10 +54,16 @@
 		A703C6852D561FAC0088DF6F /* Exceptions for "WidgetDemo" folder in "SmallWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"Utils/Color++.swift",
 				"Utils/Date++.swift",
 			);
 			target = A703C6662D561AC50088DF6F /* SmallWidgetExtension */;
+		};
+		A703C6BE2D575D620088DF6F /* Exceptions for "SmallWidget" folder in "WidgetDemo" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Utils/Color++.swift",
+			);
+			target = A703C6512D561A500088DF6F /* WidgetDemo */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -73,6 +79,7 @@
 		A703C66D2D561AC50088DF6F /* SmallWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				A703C6BE2D575D620088DF6F /* Exceptions for "SmallWidget" folder in "WidgetDemo" target */,
 				A703C67C2D561AC70088DF6F /* Exceptions for "SmallWidget" folder in "SmallWidgetExtension" target */,
 			);
 			path = SmallWidget;
