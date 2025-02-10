@@ -13,8 +13,11 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
     static var title: LocalizedStringResource { "Configuration" }
     static var description: IntentDescription { "This is an example widget.." }
     
-    @IntentParameter(title: "Device", description: "选择门锁")
+    @IntentParameter(title: "设备", description: "选择门锁")
     var device: DeviceEntity?
+    
+    @Parameter(title: "型号", default: .lock)
+    var kind: DeviceKind
     
     init(device: DeviceEntity? = nil) {
         self.device = device
@@ -25,6 +28,7 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
     static var parameterSummary: some ParameterSummary {
         Summary {
             \.$device
+            \.$kind
         }
     }
     
@@ -32,6 +36,22 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
 //        print("perform")
 //        return .result()
 //    }
+}
+
+enum DeviceKind: String, AppEnum {
+    case lock, ammeter, water, hotWater
+    
+    static var typeDisplayRepresentation: TypeDisplayRepresentation = "DeviceKind"
+    static var caseDisplayRepresentations: [DeviceKind : DisplayRepresentation] = [
+        .lock: "门锁",
+        .ammeter: "电表",
+        .water: "冷水表",
+        .hotWater: "热水表"
+    ]
+    
+    var displayRepresentation: DisplayRepresentation {
+        .init(title: "mac", subtitle: "remark")
+    }
 }
 
 struct DeviceEntity: AppEntity, Identifiable, Hashable {
@@ -57,7 +77,7 @@ struct DeviceEntity: AppEntity, Identifiable, Hashable {
         .init(title: "\(mac)", subtitle: "\(remark)")
     }
     
-    static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "mac")
+    static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "device")
     static var defaultQuery = DeviceEntityQuery()
 }
 
@@ -78,6 +98,10 @@ struct DeviceEntityQuery: EntityQuery, Sendable {
     func suggestedEntities() async throws -> [DeviceEntity] {
         Device.getAll().map(DeviceEntity.init)
     }
+    
+//    func defaultResult() async -> DeviceEntity? {
+//        try? await suggestedEntities().first
+//    }
 }
 
 extension DeviceEntityQuery: EnumerableEntityQuery {
