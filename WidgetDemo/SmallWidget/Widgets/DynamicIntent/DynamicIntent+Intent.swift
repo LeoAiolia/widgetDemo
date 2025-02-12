@@ -7,7 +7,6 @@
 import AppIntents
 import WidgetKit
 
-
 struct ConfigurationAppIntent: WidgetConfigurationIntent {
     
     static var title: LocalizedStringResource { "Configuration" }
@@ -15,6 +14,9 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
     
     @IntentParameter(title: "设备", description: "选择门锁")
     var device: DeviceEntity?
+    
+    @Parameter(title: "设备2", description: "选择门锁2", requestValueDialog: IntentDialog("Which devices would you choose?"), optionsProvider: MacAddressOptionsProvider())
+    var device2: [DeviceEntity]?
     
     @Parameter(title: "型号", default: .lock)
     var kind: DeviceKind
@@ -26,9 +28,17 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
     init() {}
     
     static var parameterSummary: some ParameterSummary {
-        Summary {
-            \.$device
-            \.$kind
+        When(\.$kind, .equalTo, DeviceKind.lock) {
+            Summary("选择门锁") {
+                \.$device
+                \.$device2
+                \.$kind
+            }
+        } otherwise: {
+            Summary("选择设备") {
+                \.$device
+                \.$kind
+            }
         }
     }
     
@@ -36,6 +46,27 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
 //        print("perform")
 //        return .result()
 //    }
+}
+
+struct MacAddressOptionsProvider: DynamicOptionsProvider {
+
+    func results() async throws -> ItemCollection<DeviceEntity> {
+        let deviceList = Device.getAll().map(DeviceEntity.init)
+        
+        return ItemCollection {
+            ItemSection(
+                "门锁",
+                items: deviceList.map {
+                    IntentItem<DeviceEntity>.init(
+                        $0,
+                        title: LocalizedStringResource(stringLiteral: $0.mac),
+                        subtitle: LocalizedStringResource(stringLiteral: $0.remark),
+                        image: .init(systemName: "person")
+                    )
+                }
+            )
+        }
+    }
 }
 
 enum DeviceKind: String, AppEnum {
