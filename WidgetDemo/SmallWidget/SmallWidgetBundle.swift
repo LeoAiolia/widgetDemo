@@ -12,7 +12,7 @@ import SwiftUI
 struct SmallWidgetBundle: WidgetBundle {
     var body: some Widget {
         DynamicIntentWidget()
-        
+        CountDownWidget()
         if #available(iOS 18.0, *) {
             SmallWidgetControl()
         }
