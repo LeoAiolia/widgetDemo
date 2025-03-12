@@ -16,5 +16,6 @@ struct SmallWidgetBundle: WidgetBundle {
         if #available(iOS 18.0, *) {
             SmallWidgetControl()
         }
+        DemoWidget()
     }
 }

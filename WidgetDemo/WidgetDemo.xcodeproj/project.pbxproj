@@ -10,6 +10,8 @@
 		A703C66A2D561AC50088DF6F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A703C6692D561AC50088DF6F /* WidgetKit.framework */; };
 		A703C66C2D561AC50088DF6F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A703C66B2D561AC50088DF6F /* SwiftUI.framework */; };
 		A703C67B2D561AC70088DF6F /* SmallWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A703C6672D561AC50088DF6F /* SmallWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A777BCAE2D81630E00FA2448 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79584FC2D5C6F0400E213E9 /* Intents.framework */; };
+		A777BCB52D81630E00FA2448 /* CarControl.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A777BCAD2D81630E00FA2448 /* CarControl.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -19,6 +21,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = A703C6662D561AC50088DF6F;
 			remoteInfo = SmallWidgetExtension;
+		};
+		A777BCB32D81630E00FA2448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A703C64A2D561A500088DF6F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A777BCAC2D81630E00FA2448;
+			remoteInfo = CarControl;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -30,6 +39,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				A703C67B2D561AC70088DF6F /* SmallWidgetExtension.appex in Embed Foundation Extensions */,
+				A777BCB52D81630E00FA2448 /* CarControl.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,6 +51,8 @@
 		A703C6672D561AC50088DF6F /* SmallWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SmallWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A703C6692D561AC50088DF6F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A703C66B2D561AC50088DF6F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A777BCAD2D81630E00FA2448 /* CarControl.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CarControl.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A79584FC2D5C6F0400E213E9 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -62,8 +74,30 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Utils/Color++.swift",
+				Widgets/CountDown/CountDown.intentdefinition,
 			);
 			target = A703C6512D561A500088DF6F /* WidgetDemo */;
+		};
+		A777BCB92D81630E00FA2448 /* Exceptions for "CarControl" folder in "CarControl" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A777BCAC2D81630E00FA2448 /* CarControl */;
+		};
+		A777BCC22D8168FA00FA2448 /* Exceptions for "SmallWidget" folder in "CarControl" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Widgets/CountDown/CountDown.intentdefinition,
+			);
+			target = A777BCAC2D81630E00FA2448 /* CarControl */;
+		};
+		A777BCC42D81706A00FA2448 /* Exceptions for "CarControl" folder in "SmallWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				IntentHandler.swift,
+			);
+			target = A703C6662D561AC50088DF6F /* SmallWidgetExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -81,8 +115,18 @@
 			exceptions = (
 				A703C6BE2D575D620088DF6F /* Exceptions for "SmallWidget" folder in "WidgetDemo" target */,
 				A703C67C2D561AC70088DF6F /* Exceptions for "SmallWidget" folder in "SmallWidgetExtension" target */,
+				A777BCC22D8168FA00FA2448 /* Exceptions for "SmallWidget" folder in "CarControl" target */,
 			);
 			path = SmallWidget;
+			sourceTree = "<group>";
+		};
+		A777BCAF2D81630E00FA2448 /* CarControl */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A777BCC42D81706A00FA2448 /* Exceptions for "CarControl" folder in "SmallWidgetExtension" target */,
+				A777BCB92D81630E00FA2448 /* Exceptions for "CarControl" folder in "CarControl" target */,
+			);
+			path = CarControl;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -104,6 +148,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A777BCAA2D81630E00FA2448 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A777BCAE2D81630E00FA2448 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -112,6 +164,7 @@
 			children = (
 				A703C6542D561A500088DF6F /* WidgetDemo */,
 				A703C66D2D561AC50088DF6F /* SmallWidget */,
+				A777BCAF2D81630E00FA2448 /* CarControl */,
 				A703C6682D561AC50088DF6F /* Frameworks */,
 				A703C6532D561A500088DF6F /* Products */,
 			);
@@ -122,6 +175,7 @@
 			children = (
 				A703C6522D561A500088DF6F /* WidgetDemo.app */,
 				A703C6672D561AC50088DF6F /* SmallWidgetExtension.appex */,
+				A777BCAD2D81630E00FA2448 /* CarControl.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,6 +185,7 @@
 			children = (
 				A703C6692D561AC50088DF6F /* WidgetKit.framework */,
 				A703C66B2D561AC50088DF6F /* SwiftUI.framework */,
+				A79584FC2D5C6F0400E213E9 /* Intents.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,6 +206,7 @@
 			);
 			dependencies = (
 				A703C67A2D561AC70088DF6F /* PBXTargetDependency */,
+				A777BCB42D81630E00FA2448 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				A703C6542D561A500088DF6F /* WidgetDemo */,
@@ -184,6 +240,28 @@
 			productReference = A703C6672D561AC50088DF6F /* SmallWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		A777BCAC2D81630E00FA2448 /* CarControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A777BCB62D81630E00FA2448 /* Build configuration list for PBXNativeTarget "CarControl" */;
+			buildPhases = (
+				A777BCA92D81630E00FA2448 /* Sources */,
+				A777BCAA2D81630E00FA2448 /* Frameworks */,
+				A777BCAB2D81630E00FA2448 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A777BCAF2D81630E00FA2448 /* CarControl */,
+			);
+			name = CarControl;
+			packageProductDependencies = (
+			);
+			productName = CarControl;
+			productReference = A777BCAD2D81630E00FA2448 /* CarControl.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -198,6 +276,9 @@
 						CreatedOnToolsVersion = 16.2;
 					};
 					A703C6662D561AC50088DF6F = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					A777BCAC2D81630E00FA2448 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
@@ -218,6 +299,7 @@
 			targets = (
 				A703C6512D561A500088DF6F /* WidgetDemo */,
 				A703C6662D561AC50088DF6F /* SmallWidgetExtension */,
+				A777BCAC2D81630E00FA2448 /* CarControl */,
 			);
 		};
 /* End PBXProject section */
@@ -231,6 +313,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A703C6652D561AC50088DF6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A777BCAB2D81630E00FA2448 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,6 +343,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A777BCA92D81630E00FA2448 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -261,6 +357,11 @@
 			isa = PBXTargetDependency;
 			target = A703C6662D561AC50088DF6F /* SmallWidgetExtension */;
 			targetProxy = A703C6792D561AC70088DF6F /* PBXContainerItemProxy */;
+		};
+		A777BCB42D81630E00FA2448 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A777BCAC2D81630E00FA2448 /* CarControl */;
+			targetProxy = A777BCB32D81630E00FA2448 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -500,6 +601,56 @@
 			};
 			name = Release;
 		};
+		A777BCB72D81630E00FA2448 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X7S38PP265;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CarControl/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CarControl;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuxiaor.WidgetDemo.CarControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A777BCB82D81630E00FA2448 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X7S38PP265;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CarControl/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CarControl;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuxiaor.WidgetDemo.CarControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -526,6 +677,15 @@
 			buildConfigurations = (
 				A703C67E2D561AC70088DF6F /* Debug */,
 				A703C67F2D561AC70088DF6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A777BCB62D81630E00FA2448 /* Build configuration list for PBXNativeTarget "CarControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A777BCB72D81630E00FA2448 /* Debug */,
+				A777BCB82D81630E00FA2448 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
