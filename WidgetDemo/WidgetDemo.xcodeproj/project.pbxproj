@@ -74,7 +74,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Utils/Color++.swift",
-				Widgets/CountDown/CountDown.intentdefinition,
 			);
 			target = A703C6512D561A500088DF6F /* WidgetDemo */;
 		};
@@ -89,6 +88,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Widgets/CountDown/CountDown.intentdefinition,
+				Widgets/Demo1/Demo.intentdefinition,
 			);
 			target = A777BCAC2D81630E00FA2448 /* CarControl */;
 		};
@@ -99,12 +99,20 @@
 			);
 			target = A703C6662D561AC50088DF6F /* SmallWidgetExtension */;
 		};
+		A777BD012D8284D600FA2448 /* Exceptions for "WidgetDemo" folder in "WidgetDemo" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A703C6512D561A500088DF6F /* WidgetDemo */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A703C6542D561A500088DF6F /* WidgetDemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				A777BD012D8284D600FA2448 /* Exceptions for "WidgetDemo" folder in "WidgetDemo" target */,
 				A703C6852D561FAC0088DF6F /* Exceptions for "WidgetDemo" folder in "SmallWidgetExtension" target */,
 			);
 			path = WidgetDemo;
@@ -496,6 +504,7 @@
 				DEVELOPMENT_TEAM = X7S38PP265;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -526,6 +535,7 @@
 				DEVELOPMENT_TEAM = X7S38PP265;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -611,6 +621,7 @@
 				INFOPLIST_FILE = CarControl/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CarControl;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -636,6 +647,7 @@
 				INFOPLIST_FILE = CarControl/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CarControl;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

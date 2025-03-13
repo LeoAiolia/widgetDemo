@@ -5,6 +5,7 @@
 	<key>INIntentsSupported</key>
 	<array>
 		<string>CountDownIntent</string>
+		<string>DemoIntent</string>
 	</array>
 	<key>NSExtension</key>
 	<dict>
@@ -12,8 +13,13 @@
 		<dict>
 			<key>IntentsRestrictedWhileLocked</key>
 			<array/>
-			<key>IntentsSupported</key>
+			<key>IntentsRestrictedWhileProtectedDataUnavailable</key>
 			<array/>
+			<key>IntentsSupported</key>
+			<array>
+				<string>CountDownIntent</string>
+				<string>DemoIntent</string>
+			</array>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.intents-service</string>

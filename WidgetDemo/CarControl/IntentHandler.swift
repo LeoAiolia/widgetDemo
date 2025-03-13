@@ -5,8 +5,6 @@
 //  Created by run on 2025/3/12.
 //
 import Intents
-import WidgetKit
-import SwiftUI
 
 enum CarControlType: String, CaseIterable {
     case lock
@@ -46,8 +44,9 @@ class IntentHandler: INExtension {
 }
 
 
-extension IntentHandler: CountDownIntentHandling {
-    func provideCarControlOptionsCollection(for intent: CountDownIntent, searchTerm: String?) async throws -> INObjectCollection<CarControl> {
+extension IntentHandler: DemoIntentHandling {
+    
+    func provideCarControlsOptionsCollection(for intent: DemoIntent, searchTerm: String?) async throws -> INObjectCollection<CarControl> {
         var carControlTypes = CarControlType
             .allCases
             .filter { carControlType in
@@ -60,13 +59,12 @@ extension IntentHandler: CountDownIntentHandling {
         }
         
         let carControls = carControlTypes.map { CarControl(identifier: $0.rawValue, display: $0.name) }
-
         return INObjectCollection(items: carControls)
     }
     
     /// 提供默认4个车控功能（小组件生命周期内只会执行一次）
-    private func defaultCarControls(for intent: CountDownIntent) -> [CarControl]? {
-        CarControlType
+    func defaultCarControls(for intent: DemoIntent) -> [CarControl]? {
+        return CarControlType
             .allCases
             .prefix(4)
             .map { CarControl(identifier: $0.rawValue, display: $0.name) }

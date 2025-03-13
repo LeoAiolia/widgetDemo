@@ -45,11 +45,13 @@ struct CountDownProvider: IntentTimelineProvider {
     func placeholder(in context: Context) -> CountDownEntry {
         CountDownEntry(date: Date(), data: CountDown(date: Date(), title:"爱上部件中心"))
     }
+    
     //    typealias Entry = CountDownEntry
     func getSnapshot(for configuration: CountDownIntent, in context: Context, completion: @escaping (CountDownEntry) -> Void) {
         let entry = CountDownEntry(date: Date(),data: CountDown(date: Date(),title: "爱上部件中心"))
         completion(entry)
     }
+    
     func getTimeline(for configuration: CountDownIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         let currentDate = Date()
         let refreshDate = Calendar.current.date(byAdding: .minute, value: 30, to: currentDate)!
@@ -69,6 +71,7 @@ struct CountDown {
 struct CountDownEntry: TimelineEntry {
     public let date: Date
     public let data: CountDown
+//    public let carControls: [CarControl]?
 }
 
 struct CountDownEntryView : View {
