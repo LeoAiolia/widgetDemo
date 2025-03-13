@@ -18,7 +18,9 @@
 	<array>
 		<dict>
 			<key>INIntentCategory</key>
-			<string>generic</string>
+			<string>information</string>
+			<key>INIntentDescription</key>
+			<string>这是Demo描述</string>
 			<key>INIntentDescriptionID</key>
 			<string>TC7rBK</string>
 			<key>INIntentEligibleForWidgets</key>
@@ -26,63 +28,12 @@
 			<key>INIntentIneligibleForSuggestions</key>
 			<true/>
 			<key>INIntentLastParameterTag</key>
-			<integer>3</integer>
+			<integer>8</integer>
 			<key>INIntentName</key>
 			<string>Demo</string>
 			<key>INIntentParameters</key>
 			<array>
 				<dict>
-					<key>INIntentParameterArraySizes</key>
-					<array>
-						<dict>
-							<key>INIntentParameterArraySizeSize</key>
-							<integer>1</integer>
-							<key>INIntentParameterArraySizeSizeClass</key>
-							<string>Small</string>
-						</dict>
-						<dict>
-							<key>INIntentParameterArraySizeSize</key>
-							<integer>4</integer>
-							<key>INIntentParameterArraySizeSizeClass</key>
-							<string>Medium</string>
-						</dict>
-						<dict>
-							<key>INIntentParameterArraySizeSize</key>
-							<integer>8</integer>
-							<key>INIntentParameterArraySizeSizeClass</key>
-							<string>Large</string>
-						</dict>
-						<dict>
-							<key>INIntentParameterArraySizeSize</key>
-							<integer>12</integer>
-							<key>INIntentParameterArraySizeSizeClass</key>
-							<string>ExtraLarge</string>
-						</dict>
-						<dict>
-							<key>INIntentParameterArraySizeSize</key>
-							<integer>1</integer>
-							<key>INIntentParameterArraySizeSizeClass</key>
-							<string>AccessoryInline</string>
-						</dict>
-						<dict>
-							<key>INIntentParameterArraySizeSize</key>
-							<integer>1</integer>
-							<key>INIntentParameterArraySizeSizeClass</key>
-							<string>AccessoryCorner</string>
-						</dict>
-						<dict>
-							<key>INIntentParameterArraySizeSize</key>
-							<integer>1</integer>
-							<key>INIntentParameterArraySizeSizeClass</key>
-							<string>AccessoryCircular</string>
-						</dict>
-						<dict>
-							<key>INIntentParameterArraySizeSize</key>
-							<integer>2</integer>
-							<key>INIntentParameterArraySizeSizeClass</key>
-							<string>AccessoryRectangular</string>
-						</dict>
-					</array>
 					<key>INIntentParameterConfigurable</key>
 					<true/>
 					<key>INIntentParameterDisplayName</key>
@@ -90,8 +41,6 @@
 					<key>INIntentParameterDisplayNameID</key>
 					<string>CA9Y6i</string>
 					<key>INIntentParameterDisplayPriority</key>
-					<integer>1</integer>
-					<key>INIntentParameterFixedSizeArray</key>
 					<integer>1</integer>
 					<key>INIntentParameterName</key>
 					<string>carControls</string>
@@ -104,6 +53,10 @@
 						<dict>
 							<key>INIntentParameterPromptDialogCustom</key>
 							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>选择想要的功能</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>CPElWE</string>
 							<key>INIntentParameterPromptDialogType</key>
 							<string>Configuration</string>
 						</dict>
@@ -136,12 +89,10 @@
 					</array>
 					<key>INIntentParameterSupportsDynamicEnumeration</key>
 					<true/>
-					<key>INIntentParameterSupportsMultipleValues</key>
-					<true/>
 					<key>INIntentParameterSupportsSearch</key>
 					<true/>
 					<key>INIntentParameterTag</key>
-					<integer>3</integer>
+					<integer>8</integer>
 					<key>INIntentParameterType</key>
 					<string>Object</string>
 				</dict>
@@ -168,8 +119,10 @@
 			<string>sP2IZu</string>
 			<key>INIntentType</key>
 			<string>Custom</string>
+			<key>INIntentUserConfirmationRequired</key>
+			<true/>
 			<key>INIntentVerb</key>
-			<string>Do</string>
+			<string>View</string>
 		</dict>
 	</array>
 	<key>INTypes</key>

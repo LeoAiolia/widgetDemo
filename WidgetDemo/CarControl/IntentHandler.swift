@@ -70,3 +70,7 @@ extension IntentHandler: DemoIntentHandling {
             .map { CarControl(identifier: $0.rawValue, display: $0.name) }
     }
 }
+
+//extension IntentHandler: WidgetConfigurationIntentHandling {
+//    
+//}

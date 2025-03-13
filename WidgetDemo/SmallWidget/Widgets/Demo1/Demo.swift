@@ -67,7 +67,7 @@ struct DemoWidget: Widget {
         }
         .supportedFamilies([.systemSmall, .systemMedium])  // 配置该组件支持的尺寸，如果不配置，默认是大中小都支持
         .configurationDisplayName("组件标题")   // 在添加组件预览界面显示
-        .description("组件描述")                 // 在添加组件预览界面显示
+        .description("组件描述")                 
     }
 }
 

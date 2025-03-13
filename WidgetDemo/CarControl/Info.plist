@@ -6,6 +6,7 @@
 	<array>
 		<string>CountDownIntent</string>
 		<string>DemoIntent</string>
+		<string>WidgetConfigurationIntent</string>
 	</array>
 	<key>NSExtension</key>
 	<dict>
